@@ -14,7 +14,8 @@ function formatData(data){
     //cmuDicts seperates the word from its phonetics with a unique double space, can split
     //creating an array of ['word','phonetics'];
     lineSplit = line.split("  ");
-    if(lineSplit!=null&&lineSplit[1]!=undefined){
+    //Eliminate bogus values, regex excludes duplicates and weird ^ words
+    if(lineSplit!=null&&lineSplit[1]!=undefined&&(lineSplit[0].match(/1/)===null)){
     //Can count the number by using regex finding phonetics with numbers on them
     var syllableArray = lineSplit[1].match(/\d/g);
     if(syllableArray!=null){
