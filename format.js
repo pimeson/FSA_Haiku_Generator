@@ -15,7 +15,7 @@ function formatData(data){
     //creating an array of ['word','phonetics'];
     lineSplit = line.split("  ");
     //Eliminate bogus values, regex excludes duplicates and weird ^ words
-    if(lineSplit!=null&&lineSplit[1]!=undefined&&(lineSplit[0].match(/1/)===null)){
+    if(lineSplit!=null&&lineSplit[1]!=undefined&&(lineSplit[0].match(/\d/)===null)){
     //Can count the number by using regex finding phonetics with numbers on them
     var syllableArray = lineSplit[1].match(/\d/g);
     if(syllableArray!=null){
